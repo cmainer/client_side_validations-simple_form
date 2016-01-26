@@ -99,7 +99,7 @@ for (wrapper of ['horizontal_form', 'vertical_form', 'inline_form']) {
     input.trigger('focusout')
     ok(input.parent().parent().hasClass('error'));
     ok(label.parent().hasClass('error'));
-    ok(input.parent().find('span.help-inline:contains("is invalid")').size() === 1);
+    ok(input.parent().find('span.help-inline:contains("is invalid")').length === 1);
   });
 
   test(wrapper + ' - Validate input-group', function() {
@@ -108,12 +108,12 @@ for (wrapper of ['horizontal_form', 'vertical_form', 'inline_form']) {
 
     input.trigger('change')
     input.trigger('focusout')
-    ok(input.closest('.input-group').find('span.help-inline').size() === 0);
-    ok(input.closest('.control-group').find('span.help-inline').size() === 1);
+    ok(input.closest('.input-group').find('span.help-inline').length === 0);
+    ok(input.closest('.control-group').find('span.help-inline').length === 1);
 
     input.val('abc')
     input.trigger('change')
     input.trigger('focusout')
-    ok(input.closest('.control-group').find('span.help-inline').size() === 0);
+    ok(input.closest('.control-group').find('span.help-inline').length === 0);
   });
 }
